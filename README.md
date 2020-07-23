@@ -15,7 +15,7 @@ _Project can be easily configured from server-config.js file which resides in ro
 }
 ```
 
-Project Structure
+##Project Structure
 
 ```
 
@@ -36,24 +36,30 @@ Project Structure
 │       socketservertest.js  //test code for socket.io
 │
 └───src
-        app-dependencies.js  //dependencies of the app
+        app-dependencies.js  //dependencies and custom middlewares of the app
         app-setup.js  //middleware setup of the app
         app.js 
 
 
 ```
 
-Json web tokens can be used within the app.js with checkAuth middleware. 
+### Using app-dependencies.js file
+
+All the dependencies of the express project resides in this file. It is created to avoid clutter on the app.js file.In the following example dependency file used for jwt middleware.
+
 
 ```
 //AllowAnonymous
+//dep object is import of app-dependencies.js file
+const dep = require('./app-dependencies');
+
 app.get("/jwtsign", (req, res, next) => {
   res.json({
     "token": dep.signAuth({ user: "testuser" }),
   })
 })
+
 //token guarded request. Will return 401 without token
-//dep object is import of app-dependencies.js file
 app.get("/jwtget", dep.checkAuth, (req, res, next) => {
   res.json({
     "decrypted-data": req.decrypt,

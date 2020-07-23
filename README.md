@@ -2,18 +2,6 @@
 
 NodeWS is a boilerplate for people who wants to setup a nodejs server with express. It can configured to use socket.io and mongodb with mongoose npm package.JWT package has been already setup for easier building. 
 
-##### Implemented Packages
-* cors
-* ddos
-* mongoose
-* socketio
-* socketio-client
-* express
-* express
-* body-parser
-
-
-
 _Project can be easily configured from server-config.js file which resides in root folder of the project._
 ```
 
@@ -82,3 +70,18 @@ app.get("/jwtget", dep.checkAuth, (req, res, next) => {
   })
 })
 ```
+### app-setup.js
+
+App-setup js file is implementing npm packages ddos, bodyparser, cors and builds mongodb connection.
+
+
+
+##### Implemented Packages
+* cors
+* ddos
+* mongoose
+* socketio
+* socketio-client
+* express
+* express
+* body-parser

@@ -42,3 +42,21 @@ Project Structure
 
 
 ```
+
+Json web tokens can be used within the app.js with checkAuth middleware. 
+
+```
+//AllowAnonymous
+app.get("/jwtsign", (req, res, next) => {
+  res.json({
+    "token": dep.signAuth({ user: "testuser" }),
+  })
+})
+//token guarded request. Will return 401 without token
+//dep object is import of app-dependencies.js file
+app.get("/jwtget", dep.checkAuth, (req, res, next) => {
+  res.json({
+    "decrypted-data": req.decrypt,
+  })
+})
+```

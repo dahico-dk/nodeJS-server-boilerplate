@@ -1,7 +1,10 @@
-const app = require("./app");
+global.__basedir = __dirname;
+const app = require("./src/app");
 const debug = require("debug")("node-angular");
 const http = require("http");
 const server = http.createServer(app);
+const sockets = require(__basedir+'/SocketIO/socketserver');
+const config=require("./server-config.json");
 
 const normalizePort = val => {
   var port = parseInt(val, 10);
@@ -43,11 +46,12 @@ const onListening = () => {
   const bind = typeof port === "string" ? "pipe " + port : "port " + port;
   console.log("Listening on " + bind);
 };
-
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
-
-
 server.on("error", onError);
 server.on("listening", onListening);
 server.listen(port);
+!config["socket-server"]||sockets(server)
+
+
+

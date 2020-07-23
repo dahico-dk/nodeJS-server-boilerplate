@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-
+const config=require(__basedir+ "/server-config.json");
 const mconnect = () => {
     mongoose
         .connect(
-            "mongodb://localhost/test",
+            config.mongo-db-connection-string,
             { useNewUrlParser: true, useUnifiedTopology: true }
         ).then(() => {
             console.log('then');

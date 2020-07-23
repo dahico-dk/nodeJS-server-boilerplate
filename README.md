@@ -3,14 +3,14 @@
 NodeWS is a boilerplate for people who wants to setup a nodejs server with express. It can configured to use socket.io and mongodb with mongoose npm package.JWT package has been already setup for easier building. 
 
 ##### Implemented Packages
-*cors
-*ddos
-*mongoose
-*socketio
-*socketio-client
-*express
-*express
-*body-parser
+* cors
+* ddos
+* mongoose
+* socketio
+* socketio-client
+* express
+* express
+* body-parser
 
 
 

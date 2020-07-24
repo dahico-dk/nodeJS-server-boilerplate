@@ -1,6 +1,6 @@
-# NodeJS Web Server Boilerplate (NodeWS)
+# NodeJS Rest Api Boilerplate (NodeApi)
 
-NodeWS is a boilerplate for people who wants to setup a nodejs server with express. It can configured to use socket.io and mongodb with mongoose npm package.JWT package has been already setup for easier building. 
+NodeApi is a boilerplate for people who wants to setup a nodejs server with express. It can configured to use socket.io and mongodb with mongoose npm package.JWT package has been already setup for easier building. 
 
 _Project can be easily configured from server-config.js file which resides in root folder of the project._
 ```
@@ -13,6 +13,10 @@ _Project can be easily configured from server-config.js file which resides in ro
     "use-cors":true
 }
 ```
+* *socket-server* : turns on socket.io
+* *mongo-db-connection* : turns on mongodb connection (mongoose)
+* *mongo-db-connection-string* : connection string for mongodb
+* *cors-origin-uri* : origin uri of cors
 
 ##Project Structure
 

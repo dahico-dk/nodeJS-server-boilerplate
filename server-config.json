@@ -1,7 +1,8 @@
 {
-    "socket-server":true,
+    "socket-server":true,  
     "mongo-db-connection":false,
     "mongo-db-connection-string":"mongodb://localhost/test",
     "cors-origin-uri":"CORS-ORİGİN-URI ",
-    "use-cors":true
+    "use-cors":true,
+    "socketio-url":"http://localhost:3000/"
 }

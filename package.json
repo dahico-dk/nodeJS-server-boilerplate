@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon server.js",
-    "test-socket": "node SocketIO/socketservertest.js"
+    "testsocket": "node SocketIO/socketservertest.js"
   },
   "author": "",
   "license": "ISC",

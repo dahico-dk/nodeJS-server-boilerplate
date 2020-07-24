@@ -1,6 +1,7 @@
 const io = require('socket.io-client');
-var socket = io.connect('http://localhost:3000/');
-
+const config=require("../server-config.json");
+console.log(config["socketio-url"]);
+var socket = io.connect(config["socketio-url"]);
 socket.on('message', onMessage );
 socket.on('connect', onConnect );
 socket.on('disconnect', onDisconnect );

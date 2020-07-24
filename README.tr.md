@@ -30,7 +30,7 @@ _Projenin temel ayarları kök dizinde yer alan server-config.json dosyasında y
 * *cors-origin-uri* : Cors Origin Uri
 * socketio-url : Server URL'i. Socket.IO'da aynı url üzerinde çalışır. Socket.IO'yu test etmek için. 
 
-##Proje Yapısı
+## Proje Yapısı
 
 ```
 

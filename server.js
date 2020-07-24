@@ -6,6 +6,7 @@ const server = http.createServer(app);
 const sockets = require(__basedir+'/SocketIO/socketserver');
 const config=require("./server-config.json");
 
+
 const normalizePort = val => {
   var port = parseInt(val, 10);
 
@@ -51,6 +52,7 @@ app.set("port", port);
 server.on("error", onError);
 server.on("listening", onListening);
 server.listen(port);
+
 !config["socket-server"]||sockets(server)
 
 

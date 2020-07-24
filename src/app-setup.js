@@ -3,8 +3,13 @@ const config=require("../server-config.json");
 
 //Insert static mw here!!!
 function appsetup(app){
+  app.use((req, res, next) => {   
+    //config["socketio-url"]=req.protocol + '://' + req.get('host') + req.originalUrl;
+    next();
+  });
     app.use(dep.ddos.express);
     app.use(dep.bodyParser.json());
+    
     !config["use-cors"]||app.use(dep.cors({
       origin: [config["cors-origin-uri"]],
       methods: ["GET", "POST"],

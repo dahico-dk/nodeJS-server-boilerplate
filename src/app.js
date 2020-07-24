@@ -1,5 +1,6 @@
 const dep = require('./app-dependencies');
 const appsetup=require("./app-setup");
+const config=require("../server-config.json");
 const app = dep.express();
 //setup dependencies of the app
 appsetup(app);
@@ -22,4 +23,5 @@ app.post("/jwtpost", dep.checkAuth, (req, res, next) => {
     "decrypted-data": req.decrypt,
   })
 })
+
 module.exports = app;

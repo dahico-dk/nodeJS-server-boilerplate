@@ -29,7 +29,7 @@ _Project can be easily configured from server-config.js file which resides in ro
 * *cors-origin-uri* : origin uri of cors
 * socketio-url : the url socketio runs for testing. It is the url of the server.
 
-##Project Structure
+## Project Structure
 
 ```
 

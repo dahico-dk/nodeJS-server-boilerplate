@@ -24,4 +24,13 @@ app.post("/jwtpost", dep.checkAuth, (req, res, next) => {
   })
 })
 
+app.get("/mssqltest", (req, res, next) => {
+  console.log(dep.mssql.query);
+  var test=dep.mssql.query("Select * from Token");
+  console.log(test);
+  res.json({
+    "token": dep.signAuth({ user: "testuser" }),
+  })
+})
+
 module.exports = app;

@@ -4,5 +4,9 @@
     "mongo-db-connection-string":"mongodb://localhost/test",
     "cors-origin-uri":"CORS-ORİGİN-URI ",
     "use-cors":true,
-    "socketio-url":"http://localhost:3000/"
+    "socketio-url":"http://localhost:3000/",
+    "mssql-server": "(LocalDb)\\MSSQLLocalDB",
+    "mssql-database":"TokenDB",
+    "mssql-user":"",
+    "mssql-password":""
 }

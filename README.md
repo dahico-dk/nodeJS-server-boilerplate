@@ -1,6 +1,6 @@
 # NodeJS Rest Api Boilerplate (NodeApi)
 
-NodeApi is a boilerplate for developers who wants to setup a simple nodejs rest api with express. It can configured to use socket.io and mongodb with mongoose npm package. JWT package has been already setup for ease the development time. 
+NodeApi is a boilerplate for developers who wants to setup a simple nodejs rest api with express. It can configured to use socket.io and mongodb with mongoose npm package. A lot of packages has been already setup for shorter development time. 
 
 ### Running server 
 server start command implemented in the package.json file

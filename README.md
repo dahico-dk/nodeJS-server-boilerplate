@@ -14,20 +14,33 @@ _Project can be easily configured from server-config.js file which resides in ro
 ```
 
 {
-    "socket-server":true,   
+    "jwt-secret":"A_VERY_SECRET_STRING_THAT_NOONE_SHOULD_KNOW",
+    "socket-server":true,  
     "mongo-db-connection":false,
     "mongo-db-connection-string":"mongodb://localhost/test",
     "cors-origin-uri":"CORS-ORİGİN-URI ",
     "use-cors":true,
-    "socketio-url":"http://localhost:3000/"
+    "socketio-url":"http://localhost:3000/",
+    "mssql-server": "MSSQL-SERVER-ADRESS",
+    "mssql-database":"MSSQL-SERVER-DB",
+    "mssql-user":"MSSQL-SERVER-USER",
+    "mssql-password":"MSSQL-SERVER-PASSWORD",
+    "mysql-server": "mySQL-SERVER-ADRESS",
+    "mysql-database":"mySQL-SERVER-DB",
+    "mysql-user":"mySQL-SERVER-USER",
+    "mysql-password":"mySQL-SERVER-PASSWORD"
 }
 ```
-
+* *jwt-secret* : secret string for jwt token encryption
 * *socket-server* : turns on socket.io
 * *mongo-db-connection* : turns on mongodb connection (mongoose)
 * *mongo-db-connection-string* : connection string for mongodb
 * *cors-origin-uri* : origin uri of cors
-* socketio-url : the url socketio runs for testing. It is the url of the server.
+*  socketio-url : the url socketio runs for testing. It is the url of the server.
+* *mssql-...* : Mssql properties for mssql connection.
+* *mysql-...* : Mysql properties for mssql connection.
+
+MSSQL and MYSQL drivers don't work like mongoose. They don't need a true/false configuration. The drivers will work if the properties for the server is right.
 
 ## Project Structure
 
@@ -44,6 +57,15 @@ _Project can be easily configured from server-config.js file which resides in ro
 │   │
 │   └───Models
 │           exampleSchema.js
+│
+│
+├───MSSql
+│     mssql.js //mssql connect file
+│
+│
+├───MySQL
+│     mysql.js //mysql connect file
+│
 │
 ├───SocketIO
 │       socketserver.js  //socket.io configuration
@@ -112,9 +134,31 @@ There is a socketio-client functionality file resides in the SocketIO folder. Wh
 npm run testsocket
 ```
 
+### MSSQL and MYSQL
+There is a example function for mysql and mssql queries in the app.js file for mssql. The packages are using raw queries. They are both tested with live db.
+
+#####  MSSQL
+```
+ dep.mssql.query("Select top 1 * from TestTable").then((result) => {
+    console.log(result);
+  });
+```
+
+#####  MYSQL
+```
+ dep.mysql.query("Select * from TestTable", (result) => {
+    console.log(result);
+  });
+```
+ 
+
+
+
 ### MongoDB
 
 The mongoose package already imported in the project. MongoDB/mongooseBuilder.js file implements basic mongoDB connection. The connection uses mongo-db-connection-string property of the config file. Also there is a exampleSchema in the Models folder.
+
+
 
 
 
@@ -125,5 +169,6 @@ The mongoose package already imported in the project. MongoDB/mongooseBuilder.js
 * socketio
 * socketio-client
 * express
-* express
 * body-parser
+* mysql
+* mssql

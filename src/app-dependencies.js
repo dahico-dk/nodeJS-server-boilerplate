@@ -10,9 +10,10 @@ const Ddos = require('ddos');
 const mongoose=require('mongoose');
 const mbuilder=require('../MongoDB/mongooseBuilder');
 const mssql=require('../MSSql/mssql');
+const mysql=require('../MySQL/mysql');
 
 
 //DDOs settings
 const ddos = new Ddos({burst:10, limit:15})
 
-module.exports={express:express,bodyParser:bodyParser,request:request,querystring:querystring,checkAuth:checkAuth,signAuth:signAuth,cors:cors,ddos:ddos,mongoose:mongoose,mbuilder:mbuilder,mssql:mssql};
+module.exports={express:express,bodyParser:bodyParser,request:request,querystring:querystring,checkAuth:checkAuth,signAuth:signAuth,cors:cors,ddos:ddos,mongoose:mongoose,mbuilder:mbuilder,mssql:mssql,mysql:mysql};

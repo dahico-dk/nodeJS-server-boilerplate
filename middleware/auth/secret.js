@@ -1,2 +1,2 @@
-
-module.exports="A_VERY_SECRET_STRING_THAT_NOONE_SHOULD_NOW";
+const config=require(__basedir+ "/server-config.json");
+module.exports = config["jwt-secret"];

@@ -1,12 +1,18 @@
 {
+    "jwt-secret":"A_VERY_SECRET_STRING_THAT_NOONE_SHOULD_KNOW",
     "socket-server":true,  
     "mongo-db-connection":false,
     "mongo-db-connection-string":"mongodb://localhost/test",
     "cors-origin-uri":"CORS-ORİGİN-URI ",
     "use-cors":true,
     "socketio-url":"http://localhost:3000/",
-    "mssql-server": "(LocalDb)\\MSSQLLocalDB",
-    "mssql-database":"TokenDB",
-    "mssql-user":"",
-    "mssql-password":""
+    "mssql-server": "MSSQL-SERVER-ADRESS",
+    "mssql-database":"MSSQL-SERVER-DB",
+    "mssql-user":"MSSQL-SERVER-USER",
+    "mssql-password":"MSSQL-SERVER-PASSWORD",
+    "mysql-server": "mySQL-SERVER-ADRESS",
+    "mysql-database":"mySQL-SERVER-DB",
+    "mysql-user":"mySQL-SERVER-USER",
+    "mysql-password":"mySQL-SERVER-PASSWORD"
+    
 }

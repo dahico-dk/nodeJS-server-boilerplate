@@ -100,7 +100,7 @@ app.get("/jwtsign", (req, res, next) => {
 ```
 #### jwt secret
 
-The secret key of the jwt process resides in *middleware/auth/secret.js
+The secret key of the jwt process resides in *server-config.js
 
 #### checkAuth middleware blocks requests without token
 

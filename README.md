@@ -6,11 +6,12 @@ NodeApi is a boilerplate for developers who wants to setup a simple nodejs rest 
 server start command implemented in the package.json file
 
 ```
-//for starting server
+//terminal code for starting server.
 npm run server
 ```
 
 _Project can be easily configured from server-config.js file which resides in root folder of the project._
+
 ```
 
 {
@@ -40,7 +41,7 @@ _Project can be easily configured from server-config.js file which resides in ro
 * *mssql-...* : Mssql properties for mssql connection.
 * *mysql-...* : Mysql properties for mssql connection.
 
-MSSQL and MYSQL drivers don't work like mongoose. They don't need a true/false configuration. The drivers will work if the properties for the server is right.
+MSSQL and MYSQL drivers don't work like mongoose. They don't need a true/false configuration. The drivers will work if the properties for the server is right. Mongoose will be setup on startup if mongo-db-connection set to true.
 
 ## Project Structure
 
@@ -81,17 +82,17 @@ MSSQL and MYSQL drivers don't work like mongoose. They don't need a true/false c
 
 ### Using app-dependencies.js file
 
-All the dependencies of the express project resides in this file. It is created to avoid clutter on the app.js file.In the following example dependency file used for jwt middleware.
+All the dependencies of the express project resides in this file. It is created to avoid clutter on the app.js file.In the following example dependency file used for jwt middleware. 
 
 ```
-//dep object is import of app-dependencies.js file
+//dep object is import of app-dependencies.js file.
 const dep = require('./app-dependencies');
 ```
 #### create a jwt token
 
-SignAuth can be used for creating jwt tokens.
+SignAuth method can be used for creating jwt tokens by using dep.signAuth.
 ```
-//AllowAnonymous
+//it will return a token which has encrypted testuser string
 app.get("/jwtsign", (req, res, next) => {
   res.json({
     "token": dep.signAuth({ user: "testuser" }),
@@ -125,6 +126,11 @@ app.use(dep.bodyParser.json());
 ```
 
 
+### socket.io
+
+The socket.io package is already implemented and basic code for broadcasting incoming message to all clients has been written in SocketIO/socketserver.js. Main angle is shortening the development time while setting up socket.io for the first time.
+
+
 ### Testing socket.io
 
 There is a socketio-client functionality file resides in the SocketIO folder. Which tries connects to socketio with socketio-url property of the config file and send a hello message for test purposes. It is implemented in the package.json file. Server must be running.
@@ -151,9 +157,6 @@ There is a example function for mysql and mssql queries in the app.js file for m
   });
 ```
  
-
-
-
 ### MongoDB
 
 The mongoose package already imported in the project. MongoDB/mongooseBuilder.js file implements basic mongoDB connection. The connection uses mongo-db-connection-string property of the config file. Also there is a exampleSchema in the Models folder.

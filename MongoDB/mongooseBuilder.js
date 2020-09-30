@@ -3,7 +3,7 @@ const config=require(__basedir+ "/server-config.json");
 const mconnect = () => {
     mongoose
         .connect(
-            config.mongo-db-connection-string,
+            config["mongo-db-connection-string"],
             { useNewUrlParser: true, useUnifiedTopology: true }
         ).then(() => {
             console.log('then');
